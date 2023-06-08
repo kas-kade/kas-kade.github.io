@@ -1,0 +1,130 @@
+*,
+:after,
+:before {
+    box-sizing: border-box
+}
+
+body,
+html,
+li,
+p,
+ul {
+    margin: 0;
+    padding: 0
+}
+
+@font-face {
+    font-family: Real VHS Font;
+    src: url("font/RealVhsFontRegular-WyV0z.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+body {
+    background-image: url('images/static_noise.gif');
+    background-size: cover;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.text {
+    font-size: clamp(24px, 4.6vw, 63px);
+    font-size: var(--font-size-secondary);
+    text-transform: uppercase
+}
+
+.button-text {
+    font-family: inherit;
+    color: inherit;
+    text-decoration: inherit;
+    font-size: inherit;
+    background: inherit;
+    text-transform: inherit;
+    text-shadow: inherit;
+    all: inherit;
+    padding: 0;
+    border: none;
+    display: inline;
+    color: #fff;
+    color: var(--text-secondary);
+    line-height: .9;
+    -webkit-appearance: none;
+    appearance: none
+}
+
+.button-text,
+a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    color: var(--text-secondary);
+    background-position: 50%;
+    background-size: 90% 0;
+    background-repeat: no-repeat
+}
+
+:root {
+    --text-primary: #a0a0a0;
+    --text-secondary: #fff;
+    --font-primary: Real VHS Font;
+    --font-size-primary: clamp(16px, 1.8vw, 34px);
+    --font-size-secondary: clamp(24px, 4.6vw, 63px);
+    --line-height: 1.4;
+    --layer-top: 55;
+    --layer-me-hover: 34;
+    --layer-content-hover: 21;
+    --layer-content: 13;
+    --layer-tv-effects: 8;
+    --layer-channels: 5;
+    --glitchy-blue: rgba(2, 183, 182, 0.4);
+    --glitchy-red: rgba(183, 2, 2, 0.4);
+    --container-width: 80%;
+    --gui-side: calc(50% - var(--container-width)/2);
+    --gui-bottom: 2.94117647059rem
+}
+
+html {
+    font-family: VHS Real Font, monospace;
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-style: normal;
+    color: #a0a0a0;
+    color: var(--text-primary);
+    font-size: clamp(16px, 1.8vw, 34px);
+    font-size: var(--font-size-primary);
+    line-height: 1.4;
+    line-height: var(--line-height)
+}
+
+.page-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    max-width: 100%;
+    min-height: 100vh;
+    width: 80%;
+    width: var(--container-width);
+    margin: 0 auto
+}
+
+.glitchy-text {
+    --shadow-x-distance: 2px;
+    --shadow-y-distance: 1px;
+    text-shadow: var(--shadow-x-distance) var(--shadow-y-distance) 0 rgba(2, 183, 182, .4), calc(var(--shadow-x-distance)*-1) calc(var(--shadow-y-distance)*-1) 0 rgba(183, 2, 2, .4);
+    text-shadow: var(--shadow-x-distance) var(--shadow-y-distance) 0 var(--glitchy-blue), calc(var(--shadow-x-distance)*-1) calc(var(--shadow-y-distance)*-1) 0 var(--glitchy-red)
+}
+
+@media (min-width:481px) {
+    .glitchy-text {
+        --shadow-x-distance: 3px;
+        --shadow-y-distance: 2px
+    }
+}
+
+@media (min-width:960px) {
+    .glitchy-text {
+        --shadow-x-distance: 4px;
+        --shadow-y-distance: 3px
+    }
+}
